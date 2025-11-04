@@ -24,7 +24,7 @@ public class MultiplesOfTests
     {
         double[] multiples = Arrays.MultiplesOf(-2, 10);
         CollectionAssert.AreEqual(new double[] { -2, -4, -6, -8, -10, -12, -14, -16, -18, -20 }, multiples);
-    }
+    }   
 }
 
 [TestClass]

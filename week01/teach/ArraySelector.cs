@@ -11,6 +11,13 @@ public static class ArraySelector
 
     private static int[] ListSelector(int[] list1, int[] list2, int[] select)
     {
+        foreach (int selection in select) {
+            if (selection == 1 ) {
+
+            } else {
+                
+            }
+        }
         return [];
     }
 }

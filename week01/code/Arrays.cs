@@ -1,3 +1,6 @@
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
+
 public static class Arrays
 {
     /// <summary>
@@ -13,7 +16,22 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+        //In order to solve the problem, we need to create a new dynamic array because we don't know what the length will be in this case.
+        //We need to create a loop that stores a value of 1 to 'i' because we will multiply the number by that value and can't have it start at 0. 
+        //It needs to loop the same amount of times as the given length.
+        //The value stored inside 'i' will increment by one every time it loops.
+        //It needs to multiply the number by i each time it goes through the loop.
+        //The result of the multiplication problem needs to be added into the array.
+
+        var multiples = new List<double>();
+
+        for (int i = 1; i <= length; i++ )
+        {
+           multiples.Add(number * i);
+        }
+
+        return multiples.ToArray();
+// replace this return statement with your own
     }
 
     /// <summary>
@@ -29,5 +47,16 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        // We need to get the specific range that needs to be rotated.
+        // We do this by first finding the correct index using Count to find the length of the array and subtract the amount from it.
+        // Then using this index we need to get the range. We use the index we just got and the amount we need to take from the data.
+        // Now that we have the data, we can remove it from the list and then add the new range back to the beginning of the data.
+        
+        int index = data.Count() - amount;
+        List<int> RangeOne = data.GetRange(index, amount);
+        data.RemoveRange(index, amount);
+        data.InsertRange(0, RangeOne);
+        //
     }
 }
