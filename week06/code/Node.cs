@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 public class Node
 {
     public int Data { get; set; }
@@ -20,6 +22,10 @@ public class Node
                 Left = new Node(value);
             else
                 Left.Insert(value);
+        }
+        else if (value == Data)
+        {
+            
         }
         else
         {
